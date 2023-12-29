@@ -68,7 +68,7 @@ AS
 BEGIN
 	DECLARE @SoSachThue int, @DEM int
 	DECLARE @MAPT char(5)
-	SELECT @SoSachThue = @SoSachThue, @MAPT = MaPT FROM inserted
+	SELECT @SoSachThue = SoSachThue, @MAPT = MaPT FROM inserted
 	SELECT @DEM = COUNT(MaPT) FROM CHITIET_PT WHERE @MAPT = MaPT
 	IF (@SoSachThue != @DEM)
 	BEGIN 
